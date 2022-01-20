@@ -1,0 +1,37 @@
+{
+  "id": "3153399",
+  "name": "jkzf-mobile",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "一款租房软件",
+  "glyphs": [
+    {
+      "icon_id": "33516",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    },
+    {
+      "icon_id": "201228",
+      "name": "3.1我的",
+      "font_class": "31wode",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "578648",
+      "name": "企业查找",
+      "font_class": "qiyechazhao",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "1450463",
+      "name": "资讯",
+      "font_class": "zixun",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    }
+  ]
+}
