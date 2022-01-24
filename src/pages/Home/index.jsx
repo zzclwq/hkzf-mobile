@@ -1,40 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { TabBar } from 'antd-mobile';
+import { useNavigate, Outlet } from 'react-router-dom';
 import './index.css';
 
 const tabBarData = [
   {
-    key: 'home',
+    key: '/index',
     title: '首页',
     icon: 'icon-home',
     path: 'home',
   },
   {
-    key: 'find',
+    key: '/find',
     title: '找房',
     icon: 'icon-qiyechazhao',
     path: 'find',
   },
   {
-    key: 'message',
+    key: '/news',
     title: '资讯',
     icon: 'icon-zixun',
     path: 'message',
   },
   {
-    key: 'my',
+    key: '/profile',
     title: '我的',
     icon: 'icon-31wode',
     path: 'my',
   }
 ];
-const Home = () => {
+const Home = (props) => {
+  const navigate = useNavigate(null);
   const [selectedTab, setSelectedTab] = useState('blueTab');
-  const renderContent = (key) => (
-    <>{key}</>
-  );
+
   return (
-    <div className="homePage" style={{ position: 'fixed', height: '100%', width: '100%', top: 0 }}>
+    <div className="homePage" style={{ position: 'fixed', height: '100%', width: '100%', bottom: 0 }}>
         <TabBar
           unselectedTintColor="#949494"
           tintColor="#33A3F4"
@@ -50,10 +50,13 @@ const Home = () => {
                 selected={selectedTab === item.path}
                 badge={item.badge || null}
                 dot={item.dot || false}
-                onPress={() => {setSelectedTab(item.path);}}
+                onPress={() => {
+                  setSelectedTab(item.path);
+                  navigate(`/home${item.key}`)
+                }}
                 // data-seed="logId"
               >
-                {renderContent(item.selectedTabName)}
+                  <Outlet />
               </TabBar.Item>
             ))
           }
