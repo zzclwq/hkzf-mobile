@@ -20,6 +20,8 @@ import { useRoutes, BrowserRouter as Router } from 'react-router-dom'; // v6实�
 //     component: lazy(() => import('./pages/CityList/index') )
 //   }
 // ]
+
+
 const App = () => {
   // useRoutes必须包裹在Router组件之内使用
   const element = useRoutes(routes);
@@ -32,14 +34,18 @@ const AppWrapper = () => {
       <App />
     </Router>
   )
+  // v5
   // return (
   //   <Router>
   //     <div className="App">
-  //       <Link to="/">home </Link>
-  //       <Link to="/cityList">cityList </Link>
   //      <Routes>
-  //         <Route path="/" element={ <Home />}></Route>
-  //         <Route path="/cityList" element={<CityList />}></Route>
+  //         <Route path="/" element={ <Home />}>
+  //           <Route index element={ <div>index</div>}></Route>
+  //           <Route path="find" element={<div>find</div>}></Route>
+  //           <Route path="news" element={<div>news</div>}></Route>
+  //           <Route path="profile" element={<div>profile</div>}></Route>
+  //         </Route>
+  //         <Route path="/citylist" element={<CityList />}></Route>
   //      </Routes>
   //     </div>
   //   </Router>

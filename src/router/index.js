@@ -2,23 +2,24 @@ import Home from '../pages/Home';
 import CityList from '../pages/CityList';
 export const routes = [
     {
-        path: '/home',
+        path: '/',
         element: <Home />,
         children: [
             {
-                path: '/home/index',
+                // path: '/home/index',
+                index: true, // 嵌套路由中，如果url只匹配了父级url，Outlet则会显示带有index属性的路由
                 element: <div>index</div>
             },
             {
-                path: '/home/find',
+                path: '/find',
                 element: <div>finds</div>
             },
             {   
-                path: '/home/news',
+                path: '/news',
                 element: <div>news</div>
             },
             {   
-                path: '/home/profile',
+                path: '/profile',
                 element: <div>profile</div>
             }
         ]
@@ -26,5 +27,9 @@ export const routes = [
     {
         path:  '/citylist',
         element: <CityList />
+    },
+    {
+        path:  '*',
+        element: <div>404</div>
     }
 ];
